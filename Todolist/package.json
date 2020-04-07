@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "mobx": "^5.15.4",
     "mobx-react": "^6.1.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -39,5 +40,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

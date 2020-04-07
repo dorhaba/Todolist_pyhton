@@ -1,0 +1,23 @@
+{
+  "note": [
+    {
+      "id": 0,
+      "noteName": "buy",
+      "todos": [
+        {
+          "todoId": 0,
+          "title": "banana",
+          "completed": false
+        },
+        {
+          "todoId": 1,
+          "title": "iphone",
+          "completed": false
+        }
+      ],
+      "dateCreated": "2020-04-07T11:55:15.250Z",
+      "lastUpdated": "2020-04-07T11:55:15.250Z",
+      "checkList": false
+    }
+  ]
+}
