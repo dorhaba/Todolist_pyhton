@@ -17,8 +17,6 @@ export class INotes {
 }
 
 class funcNotes {
-
-
     @observable notes: IObservableArray<INotes> = observable([]);
     @observable maxNotes: number = 10;
     @observable currentNotesCount = 0;
