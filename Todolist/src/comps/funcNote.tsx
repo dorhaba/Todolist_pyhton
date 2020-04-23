@@ -8,14 +8,14 @@ export class ITodo {
 }
 
 export class INotes {
-    _id?: string;
     id: number = 0;
     noteName: string = '';
     todos: ITodo[] = [];
     dateCreated: Date = new Date();
     lastUpdated: Date = new Date();
+    openList: boolean = false;
 }
-const url = 'http://localhost:3010/note';
+
 class funcNotes {
 
 
@@ -25,30 +25,45 @@ class funcNotes {
 
     public async getInitialData() {
         console.log("1");
-        const homePage = await axios.get('http://localhost:3010/note/');
-        console.log("2");
-        myNotes.notes = homePage.data;
-        console.log("3");
+        await axios.get('http://localhost:3020/note')
+            .then(response => {
+                console.log(response)
+                myNotes.notes = response.data;
+            })
+            .catch(error => {
+                console.log(error)
+            });
     }
 
     public async deleteNoteToServer(id: number) {
-        await axios.delete('http://localhost:3010/note/' + id);
-
+        await axios.delete('http://localhost:3020/note/' + id)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            });
     }
 
     public async addNoteToServer(note: INotes) {
-        await axios.post(url, note);
+        await axios.post('http://localhost:3020/note', note);
         this.getInitialData();
     }
 
     public async updateNoteToServer(note: INotes) {
-        await axios.patch('http://localhost:3010/note/' + note._id, note);
-        console.log("dcdcdc");
+        await axios.patch('http://localhost:3020/note/' + note.id, note)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            });
     }
 
     public addNote(noteName: string) {
         if (this.currentNotesCount < this.maxNotes) {
             const newNote = new INotes();
+            console.log(noteName + "cdccd");
             if (myNotes.notes.length === 0) {
                 newNote.id = 0;
             }
@@ -74,11 +89,16 @@ class funcNotes {
         this.updateNoteToServer(myNotes.notes[id]);
     }
 
+
     public markComplete(idNote: number, idTodo: number) {
         myNotes.notes[idNote].todos[idTodo].completed = !myNotes.notes[idNote].todos[idTodo].completed;
         this.updateNoteToServer(myNotes.notes[idNote]);
     }
 
+    public OpenList(idNote: number) {
+        myNotes.notes[idNote].openList = !myNotes.notes[idNote].openList;
+        this.updateNoteToServer(myNotes.notes[idNote]);
+    }
 
     public deleteNote(id: number) {
         this.notes.replace([...this.notes.filter(note => note.id !== id)]);
