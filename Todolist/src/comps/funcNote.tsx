@@ -23,7 +23,7 @@ class funcNotes {
 
     public async getInitialData() {
         console.log("1");
-        await axios.get('http://localhost:3020/note')
+        await axios.get('https://my-json-server.typicode.com/dorhaba/NoteJson/note')
             .then(response => {
                 console.log(response)
                 myNotes.notes = response.data;
@@ -34,7 +34,7 @@ class funcNotes {
     }
 
     public async deleteNoteToServer(id: number) {
-        await axios.delete('http://localhost:3020/note/' + id)
+        await axios.delete('https://my-json-server.typicode.com/dorhaba/NoteJson/note' + id)
             .then(response => {
                 console.log(response)
             })
@@ -44,12 +44,12 @@ class funcNotes {
     }
 
     public async addNoteToServer(note: INotes) {
-        await axios.post('http://localhost:3020/note', note);
+        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note', note);
         this.getInitialData();
     }
 
     public async updateNoteToServer(note: INotes) {
-        await axios.patch('http://localhost:3020/note/' + note.id, note)
+        await axios.patch('https://my-json-server.typicode.com/dorhaba/NoteJson/note' + note.id, note)
             .then(response => {
                 console.log(response)
             })
