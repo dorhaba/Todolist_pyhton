@@ -7,7 +7,7 @@
         {
           "todoId": 0,
           "title": "בשר",
-          "completed": false
+          "completed": true
         },
         {
           "todoId": 1,
@@ -22,12 +22,12 @@
         {
           "todoId": 3,
           "title": "ירקות",
-          "completed": false
+          "completed": true
         }
       ],
       "dateCreated": "2020-04-23T14:27:03.752Z",
       "lastUpdated": "2020-04-23T14:27:03.752Z",
-      "openList": false
+      "openList": true
     },
     {
       "id": 3,

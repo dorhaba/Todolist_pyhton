@@ -38,7 +38,7 @@ class Form extends React.Component<Iprops, Istate> {
         return (
             <div className="container-sm p-4 my-4  bg-dark text-white" >
                 <h2>Todo - List
-                     <span className="badge badge-pill badge-success">{myNotes.currentNotesCount}</span>
+
                 </h2>
                 < form className="form-group" onSubmit={this.handleSubmit} >
                     <div className="row" >
