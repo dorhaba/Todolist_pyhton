@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dorhaba.github.io/Todolist_Jobproject",
+  "homepage": "https://dorhaba.github.io/Todolist_JobProject/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
