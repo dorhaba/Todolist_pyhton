@@ -22,8 +22,7 @@ class funcNotes {
     @observable currentNotesCount = 0;
 
     public async getInitialData() {
-        console.log("1");
-        await axios.get('https://my-json-server.typicode.com/dorhaba/NoteJson/note')
+        await axios.get('https://my-json-server.typicode.com/dorhaba/Todolist_Jobproject/note')
             .then(response => {
                 console.log(response)
                 myNotes.notes = response.data;
@@ -34,7 +33,7 @@ class funcNotes {
     }
 
     public async deleteNoteToServer(id: number) {
-        await axios.delete('https://my-json-server.typicode.com/dorhaba/NoteJson/note/' + id)
+        await axios.delete('https://my-json-server.typicode.com/dorhaba/Todolist_Jobproject/note/' + id)
             .then(response => {
                 console.log(response)
             })
@@ -44,13 +43,13 @@ class funcNotes {
     }
 
     public async addNoteToServer(note: INotes) {
-        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note/', note);
+        await axios.post('https://my-json-server.typicode.com/dorhaba/Todolist_Jobproject/note/', note);
         this.getInitialData();
         console.log("add");
     }
 
     public async updateNoteToServer(note: INotes) {
-        await axios.patch('https://my-json-server.typicode.com/dorhaba/NoteJson/note/' + note.id, note)
+        await axios.patch('https://my-json-server.typicode.com/dorhaba/Todolist_Jobproject/note/' + note.id, note)
             .then(response => {
                 console.log(response);
                 console.log("update");
