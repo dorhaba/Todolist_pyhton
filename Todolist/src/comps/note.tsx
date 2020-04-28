@@ -59,7 +59,7 @@ class Notes extends React.Component<Iprops, Istate> {
                 <div className="card bg-success text-white my-4 " >
                     <div className="card-body" >
                         <div className="d-flex justify-content-between">
-                            <h4 className="card-title">{myNotes.notes[this.props.id].noteName} </h4>
+                            <h6 className="card-title">{myNotes.notes[this.props.id].noteName} </h6>
                             < div className="row" >
                                 < GoListUnordered
                                     onClick={() => { this.Openlist(this.props.id) }} />

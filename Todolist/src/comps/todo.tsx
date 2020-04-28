@@ -22,7 +22,7 @@ class Todo extends React.Component<Iprops>{
                             "list-group-item list-group-item-action list-group-item-info d-flex justify-content-between align-items-center" :
                             "list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between align-items-center"
                         }>
-                        <h5 > {todo.title}</h5>
+                        <h6 > {todo.title}</h6>
                         <div>
                             <GoCheck color="Green" onClick={() => this.props.changeComp(idTodo)} />
                         </div>
