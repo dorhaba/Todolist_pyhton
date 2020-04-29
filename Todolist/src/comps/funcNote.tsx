@@ -43,7 +43,7 @@ class funcNotes {
     }
 
     public async addNoteToServer(note: INotes) {
-        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note/', note)
+        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note', note)
             .then(response => {
                 console.log(response);
                 this.getInitialData();

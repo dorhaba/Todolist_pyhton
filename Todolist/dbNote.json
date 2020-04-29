@@ -1,7 +1,7 @@
 {
   "note": [
     {
-      "id": 2,
+      "id": 1,
       "noteName": "קניות",
       "todos": [
         {
@@ -30,7 +30,7 @@
       "openList": true
     },
     {
-      "id": 3,
+      "id": 2,
       "noteName": "משימות",
       "todos": [
         {
@@ -44,7 +44,7 @@
       "openList": true
     },
     {
-      "id": 4,
+      "id": 3,
       "noteName": "ניקיון",
       "todos": [
         {
