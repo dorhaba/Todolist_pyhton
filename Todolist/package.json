@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "json:server": "json-server --watch dbNote.json"
   },
   "eslintConfig": {
     "extends": "react-app"
