@@ -43,11 +43,10 @@ class funcNotes {
     }
 
     public async addNoteToServer(note: INotes) {
-        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note', note)
+        await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note/', note)
             .then(response => {
                 console.log(response);
                 this.getInitialData();
-                console.log("add");
             })
             .catch(error => {
                 console.log(error)
@@ -59,7 +58,6 @@ class funcNotes {
         await axios.patch('https://my-json-server.typicode.com/dorhaba/NoteJson/note/' + note.id, note)
             .then(response => {
                 console.log(response);
-                console.log("update");
             })
             .catch(error => {
                 console.log(error)
@@ -80,6 +78,7 @@ class funcNotes {
             this.notes.push(newNote);
             this.currentNotesCount = this.currentNotesCount + 1;
             this.addNoteToServer(newNote);
+
         }
     }
 
