@@ -46,7 +46,7 @@ class funcNotes {
         await axios.post('https://my-json-server.typicode.com/dorhaba/NoteJson/note/', note)
             .then(response => {
                 console.log(response);
-                this.getInitialData();
+                // this.getInitialData();
             })
             .catch(error => {
                 console.log(error)
