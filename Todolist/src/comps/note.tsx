@@ -54,6 +54,7 @@ class Notes extends React.Component<Iprops, Istate> {
     }
 
     render() {
+
         return (
             <div>
                 <div className="card bg-success text-white my-4 " >
@@ -79,10 +80,11 @@ class Notes extends React.Component<Iprops, Istate> {
                                         < button type="submit" className="btn btn-info " > Add </button>
                                     </div>
                                 </form>
-                                {myNotes.notes[this.props.id].todos.map((todo) => {
+                                {myNotes.notes[this.props.id].todos.map((todo, index) => {
                                     return (
                                         <Todo
                                             key={todo.todoId}
+                                            idIndex={index}
                                             idTodo={todo.todoId}
                                             idNote={this.props.id}
                                             changeComp={this.changeComp} />);

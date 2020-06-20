@@ -3,7 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { GoCheck } from "react-icons/go";
 import myNotes from './funcNote';
 
+
 interface Iprops {
+    idIndex: number;
     idTodo: number;
     idNote: number;
     changeComp(idTodo: number): void;
@@ -11,9 +13,11 @@ interface Iprops {
 
 class Todo extends React.Component<Iprops>{
 
+
     render() {
-        const { idNote, idTodo } = this.props;
-        const todo = myNotes.notes[idNote].todos[idTodo];
+        const { idNote, idTodo, idIndex } = this.props;
+        const todo = myNotes.notes[idNote].todos[idIndex];
+
         return (
             <div>
                 <div className="list-group" >
@@ -24,12 +28,11 @@ class Todo extends React.Component<Iprops>{
                         }>
                         <h6 > {todo.title}</h6>
                         <div>
-                            <GoCheck color="Green" onClick={() => this.props.changeComp(idTodo)} />
+                            <GoCheck color="Green" onClick={() => this.props.changeComp(idIndex)} />
                         </div>
                     </div>
                 </div>
             </div>
-
         );
     }
 }
